@@ -7,13 +7,10 @@ var MSG_ERROR_BASE = "l'instruction semble contenir une erreur : ";
 
 function initCanvas() {
     console.log("initCanvas()...");
-
     input = document.getElementById("input");
     feuille = document.getElementById("feuille");
     crayon = feuille.getContext("2d");
-
     crayon.strokeStyle = "rgb(0,0,0)";
-
 }
 
 function areSet(args) {
@@ -100,8 +97,6 @@ function rond(centreX, centreY, rayon, color) {
 function clearInput() {
     input.value.replace(/\n/g, '');
     input.value = '';
-    /*input.setSelectionRange(0,0);*/
-    setCaretPosition(input, 0);
     console.log('clearInput', input.value);
 }
 
@@ -141,21 +136,7 @@ function efface() {
     clearInput();
 }
 
+/* TODO
 function annule() {
-    crayon.clearRect(0, 0, feuille.width, feuille.height);
-    clearInput();
-}
 
-function setCaretPosition(ctrl, pos) {
-    if (ctrl.setSelectionRange) {
-        ctrl.focus();
-        ctrl.setSelectionRange(pos, pos);
-    }
-    else if (ctrl.createTextRange) {
-        var range = ctrl.createTextRange();
-        range.collapse(true);
-        range.moveEnd('character', pos);
-        range.moveStart('character', pos);
-        range.select();
-    }
-}
+}*/
