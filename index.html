@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<link type="text/css" rel="stylesheet" href="ardoise.css">
+
+	<script type="text/javascript" src="ardoise.js"></script>
+
+</head>
+<body onload="initCanvas()">
+
+<h1>Ardoise magique</h1>
+
+<div id="lexique">
+	<!--<h2>Instructions</h2>-->
+
+	<img id="model" src="maison.png" alt="modèle du dessin à reproduire : maison"
+			width="540"
+			>
+	
+	<p>Reproduisez l'image ci-dessus à l'aide de ces 4 commandes : </p>
+	<ul id="command-list">
+	<li><span class="emphatized">trait</span>( departX, departY, arriveeX, arriveeY, couleurOptionnelle<sup>*</sup> )</li>
+
+	<li><span class="emphatized">rect</span>( positionX, positionY, largeur, hauteur, couleurOptionnelle<sup>*</sup> )</li>
+
+	<li><span class="emphatized">rond</span>( centreX, centreY, rayon, couleurOptionnelle<sup>*</sup> )</li>
+
+	<li><span class="emphatized">efface()</span></li>
+	</ul>
+
+	<p>Exemple : trait( 50, 50, 150, 150, 'r') </p>
+	<!--<p><span class="method">annule()</span></p>-->
+
+	<div id="color-legend">* <span class="emphatized">Couleurs disponibles :</span>
+		<ul id="color-list">
+			<li><span class="emphatized">"r"</span> : rouge</li>
+			<li><span class="emphatized">"v"</span> : vert</li>
+			<li><span class="emphatized">"b"</span> : bleu</li>
+			<li><span class="emphatized">"o"</span> : orange</li>
+		</ul>
+		( Par défaut, les traits sont dessinés en noir )
+	</div>
+</div>
+
+<div id="app">
+<div id="console-box">
+	<p id="errorDisplay"/>
+
+	<h2>Console</h2>
+
+	<input id="input" autofocus onkeyup="onKeyPressed(event)"
+		   placeholder="Saisissez une commande, appuyez sur la touche Entrée pour l'exécuter..."
+			/>
+	<!--<button class="btn" onclick="execute(input.value)">Exécuter (touche 'Entrée')</button>-->
+</div>
+
+<div id="canvas-box">
+	<div id="canvasbar">
+		<h2>Canevas</h2>
+		<!--<button onclick="efface()">Effacer</button>-->
+		<!--<button onclick="cancel()">Effacer</button>-->
+	</div>
+	<canvas id="feuille" width="600" height="300"></canvas>
+</div>
+</div>
+</body>
+</html>
